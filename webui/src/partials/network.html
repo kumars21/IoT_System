@@ -1,0 +1,33 @@
+<div class="container mt-3">
+
+  <form class="needs-validation" id="network-form-wifi" novalidate>
+    <div class="row mt-3 align-items-center">
+        <label for="network-field-ssid" class="col-md-1 form-label">SSID</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="network-field-ssid" required>
+            <div class="invalid-feedback">
+                Please enter the Wi-Fi network name (SSID).
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3 align-items-center">
+        <label for="network-field-password" class="col-md-1 form-label">Password</label>
+        <div class="col-md-4">
+            <input type="password" class="form-control" id="network-field-password" required>
+            <div class="invalid-feedback">
+                Please enter the Wi-Fi password.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-auto">
+            <button type="button" class="btn btn-primary" id="network-btn-save">Save</button>
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-secondary" id="network-btn-reset">Reset</button>
+        </div>
+    </div>
+
+  </form>
+</div>
