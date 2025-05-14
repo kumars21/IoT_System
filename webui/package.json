@@ -5,10 +5,17 @@
   "author": "fish47",
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
-    "parcel": "^2.15.0"
+    "parcel": "^2.15.0",
+    "posthtml": "^0.16.6",
+    "posthtml-include": "^2.0.1"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
     "jquery": "^3.7.1"
+  },
+  "posthtml": {
+    "plugins": {
+      "posthtml-include": {}
+    }
   }
 }
