@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Lock Admin Console</title>
+  <style>
+    @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <!-- tab buttons -->
+    <ul class="nav nav-tabs mb-3" id="framework-tab-container-buttons" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="framework-tab-btn-network" data-bs-toggle="tab" data-bs-target="#framework-tab-panel-network" type="button" role="tab">Network</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="framework-tab-btn-controls" data-bs-toggle="tab" data-bs-target="#framework-tab-panel-control" type="button" role="tab">Control</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="framework-tab-btn-users" data-bs-toggle="tab" data-bs-target="#framework-tab-panel-users" type="button" role="tab">Users</button>
+      </li>
+    </ul>
+
+    <!-- tab panels -->
+    <div class="tab-content" id="framework-tab-container-panels">
+      <div class="tab-pane fade show active" id="framework-tab-panel-network" role="tabpanel" tabindex="0">...</div>
+      <div class="tab-pane fade" id="framework-tab-panel-control" role="tabpanel" tabindex="0">...</div>
+      <div class="tab-pane fade" id="framework-tab-panel-users" role="tabpanel" tabindex="0">...</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import "./js/init.js";
+  </script>
+
+</body>
+</html>

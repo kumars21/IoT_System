@@ -1,0 +1,14 @@
+{
+  "name": "webui",
+  "version": "1.0.0",
+  "description": "Web UI for the IOT smart lock",
+  "author": "fish47",
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "parcel": "^2.15.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "jquery": "^3.7.1"
+  }
+}
