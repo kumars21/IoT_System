@@ -24,6 +24,9 @@ importers:
       posthtml-include:
         specifier: ^2.0.1
         version: 2.0.1
+      process:
+        specifier: ^0.11.10
+        version: 0.11.10
 
 packages:
 
@@ -831,6 +834,10 @@ packages:
   posthtml@0.16.6:
     resolution: {integrity: sha512-JcEmHlyLK/o0uGAlj65vgg+7LIms0xKXe60lcDOTU7oVX/3LuEuLwrQpW3VJ7de5TaFKiW4kWkaIpJL42FEgxQ==}
     engines: {node: '>=12.0.0'}
+
+  process@0.11.10:
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
+    engines: {node: '>= 0.6.0'}
 
   react-refresh@0.16.0:
     resolution: {integrity: sha512-FPvF2XxTSikpJxcr+bHut2H4gJ17+18Uy20D5/F+SKzFap62R3cM5wH6b8WN3LyGSYeQilLEcJcR1fjBSI2S1A==}
@@ -1910,6 +1917,8 @@ snapshots:
     dependencies:
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
+
+  process@0.11.10: {}
 
   react-refresh@0.16.0: {}
 
