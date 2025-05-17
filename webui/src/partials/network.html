@@ -1,33 +1,67 @@
 <div class="container mt-3">
-
   <form class="needs-validation" id="network-form-wifi" novalidate>
     <div class="row mt-3 align-items-center">
-        <label for="network-field-ssid" class="col-md-1 form-label">SSID</label>
-        <div class="col-md-4">
-            <input type="text" class="form-control" id="network-field-ssid" required>
-            <div class="invalid-feedback">
-                Please enter the Wi-Fi network name (SSID).
-            </div>
+      <label for="network-field-ssid" class="col-md-1 form-label">SSID</label>
+      <div class="col-md-4">
+        <input type="text" class="form-control" id="network-field-ssid" required>
+        <div class="invalid-feedback">
+          Please enter the Wi-Fi network name (SSID).
         </div>
+      </div>
     </div>
     <div class="row mt-3 align-items-center">
-        <label for="network-field-password" class="col-md-1 form-label">Password</label>
-        <div class="col-md-4">
-            <input type="password" class="form-control" id="network-field-password" required>
-            <div class="invalid-feedback">
-                Please enter the Wi-Fi password.
-            </div>
+      <label for="network-field-password" class="col-md-1 form-label">Password</label>
+      <div class="col-md-4">
+        <input type="password" class="form-control" id="network-field-password" required>
+        <div class="invalid-feedback">
+          Please enter the Wi-Fi password.
         </div>
+      </div>
     </div>
-
     <div class="row mt-3">
-        <div class="col-auto">
-            <button type="button" class="btn btn-primary" id="network-btn-save">Save</button>
-        </div>
-        <div class="col-auto">
-            <button type="button" class="btn btn-secondary" id="network-btn-reset">Reset</button>
-        </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-primary" id="network-btn-save">Save</button>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-secondary" id="network-btn-reset">Reset</button>
+      </div>
     </div>
-
   </form>
+</div>
+
+
+<div class="modal fade" id="network-modal-save" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Connect to Network</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        The device will connect to the configured network. If the network is unavailable, the device will revert to its initial hotspot.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Confirm</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="network-modal-revert" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Reset to Hotspot</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        The device will forget connected network and revert to default hotspot.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Confirm</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
