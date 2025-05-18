@@ -5,6 +5,10 @@ class User:
         self.name = name
         self.tag = tag
 
+class SavedNetwork:
+    ssid = "FakeSSID"
+    password ="You don't know"
+
 class TagGenerator:
     def __init__(self):
         self._index = 0
@@ -19,6 +23,7 @@ class DummyState:
 
     locked = False
     users = []
+    network = SavedNetwork()
 
     def add_user(self, name):
         user = User(name, self._new_tag())
@@ -45,8 +50,18 @@ def _add_cors_header(response):
     response.headers["Access-Control-Allow-Headers"] = "Content-Type"
     return response
 
+@bp.get("/network/get")
+def _network_get():
+    return {
+        "ssid": state.network.ssid,
+        "password": state.network.password,
+    }
+
 @bp.post("/network/save")
 def _network_save():
+    data = flask.request.get_json()
+    state.network.ssid = data["ssid"]
+    state.network.password = data["password"]
     return {"succeed": True}
 
 @bp.post("/network/reset")

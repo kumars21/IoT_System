@@ -1,18 +1,40 @@
 $(function() {
     const $form = $("#network-form-wifi");
+    const $btnSave = $("#network-btn-connect");
+    const $btnReset = $("#network-btn-reset");
+    const $fieldSsid = $("#network-field-ssid");
+    const $fieldPassword = $("#network-field-password");
     const $modalConnect = $("#network-modal-connect");
     const $modalRevert = $("#network-modal-revert");
     const bsmodalConnect = new bootstrap.Modal($modalConnect);
     const bsmodalRevert = new bootstrap.Modal($modalRevert);
 
-    $("#network-btn-connect").on("click", function() {
+    function setEnableState(enable) {
+        $.each([$btnSave, $btnReset, $fieldSsid, $fieldPassword], function(i, e) {
+            e.prop("disabled", !enable);
+        });
+    }
+
+    // pull the saved network
+    setEnableState(false);
+    $.ajax({
+        url: process.env.APP_API_SERVER + "/api/network/get",
+        type: "GET",
+    }).done(function(data) {
+        $fieldSsid.val(data.ssid);
+        $fieldPassword.val(data.password);
+    }).always(function() {
+        setEnableState(true);
+    });
+
+    $btnSave.on("click", function() {
         $form.addClass('was-validated');
         if (!$form.get(0).checkValidity())
             return false;
         bsmodalConnect.show();
     });
 
-    $("#network-btn-reset").on("click", function() {
+    $btnReset.on("click", function() {
         bsmodalRevert.show();
     });
 
@@ -23,8 +45,8 @@ $(function() {
             type: "POST",
             contentType: 'application/json',
             data: JSON.stringify({
-                "ssid": $("#network-field-ssid").val(),
-                "password": $("#network-field-password").val(),
+                "ssid": $fieldSsid.val(),
+                "password": $fieldPassword.val(),
             }),
         });
     });
