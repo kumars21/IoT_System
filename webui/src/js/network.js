@@ -23,12 +23,6 @@ $(function() {
     const bsmodalConnect = new bootstrap.Modal($modalConnect);
     const bsmodalRevert = new bootstrap.Modal($modalRevert);
 
-    function setEnableState(enable) {
-        $.each([$btnSave, $btnReset, $fieldSsid, $fieldPassword, $togglePassword], function(i, e) {
-            e.prop("disabled", !enable);
-        });
-    }
-
     function setPasswordVisible(visible) {
         $togglePassword.empty();
         if (visible) {
@@ -46,15 +40,14 @@ $(function() {
     }
 
     // pull the saved network
-    setEnableState(false);
+    $form.hide();
     $.ajax({
         url: process.env.APP_API_SERVER + "/api/network/get",
         type: "GET",
     }).done(function(data) {
+        $form.show();
         $fieldSsid.val(data.ssid);
         $fieldPassword.val(data.password);
-    }).always(function() {
-        setEnableState(true);
     });
 
     $btnSave.on("click", function() {
