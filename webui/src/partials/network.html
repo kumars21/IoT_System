@@ -12,7 +12,10 @@
     <div class="row mt-3 align-items-center">
       <label for="network-field-password" class="col-md-1 form-label">Password</label>
       <div class="col-md-4">
-        <input type="password" class="form-control" id="network-field-password" required>
+        <div class="input-group">
+          <input type="password" class="form-control" id="network-field-password" required>
+          <button class="btn btn-primary" type="button" id="network-toggle-password"></button>
+        </div>
         <div class="invalid-feedback">
           Please enter the Wi-Fi password.
         </div>
