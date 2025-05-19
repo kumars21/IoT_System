@@ -34,7 +34,7 @@ $(function() {
             $.ajax({
                 url: process.env.APP_API_SERVER + "/api/users/delete",
                 type: "POST",
-                contentType: 'application/json',
+                contentType: "application/json",
                 data: JSON.stringify({
                     "tag": item.tag,
                 }),
@@ -72,7 +72,7 @@ $(function() {
         // reject empty user name
         const name = $.trim($addName.val());
         if (!name.length) {
-            $addName.addClass('is-invalid');
+            $addName.addClass("is-invalid");
             return;
         }
 
@@ -80,7 +80,7 @@ $(function() {
         $.ajax({
             url: process.env.APP_API_SERVER + "/api/users/add",
             type: "POST",
-            contentType: 'application/json',
+            contentType: "application/json",
             data: JSON.stringify({
                 "name": name,
             }),

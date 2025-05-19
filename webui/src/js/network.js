@@ -51,7 +51,7 @@ $(function() {
     });
 
     $btnSave.on("click", function() {
-        $form.addClass('was-validated');
+        $form.addClass("was-validated");
         if (!$form.get(0).checkValidity())
             return false;
         bsmodalConnect.show();
@@ -71,7 +71,7 @@ $(function() {
         $.ajax({
             url: process.env.APP_API_SERVER + "/api/network/save",
             type: "POST",
-            contentType: 'application/json',
+            contentType: "application/json",
             data: JSON.stringify({
                 "ssid": $fieldSsid.val(),
                 "password": $fieldPassword.val(),
@@ -84,7 +84,7 @@ $(function() {
         $.ajax({
             url: process.env.APP_API_SERVER + "/api/network/reset",
             type: "POST",
-            contentType: 'application/json',
+            contentType: "application/json",
         });
     });
 });

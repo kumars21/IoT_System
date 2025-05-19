@@ -33,7 +33,7 @@ $(function() {
         $.ajax({
             url: process.env.APP_API_SERVER + "/api/control/lock/set",
             type: "POST",
-            contentType: 'application/json',
+            contentType: "application/json",
             data: JSON.stringify({
                 "locked": request,
             }),
