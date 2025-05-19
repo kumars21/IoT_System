@@ -5,6 +5,7 @@
   "author": "fish47",
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
+    "@parcel/transformer-sass": "2.15.0",
     "parcel": "^2.15.0",
     "posthtml": "^0.16.6",
     "posthtml-include": "^2.0.1",

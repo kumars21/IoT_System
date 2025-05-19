@@ -1,0 +1,3 @@
+{
+  "silenceDeprecations": ["import", "color-functions", "global-builtin"]
+}
