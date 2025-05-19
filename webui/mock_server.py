@@ -1,3 +1,5 @@
+import os
+import sys
 import flask
 
 class User:
@@ -97,5 +99,9 @@ def _users_delete():
     return {"succeed": state.delete_user(data["tag"])}
 
 if __name__ == "__main__":
+    if len(sys.argv) == 2 and os.path.isfile(sys.argv[1]):
+        with open(sys.argv[1]) as f:
+            page = f.read()
+            app.get("/", endpoint="/")(lambda: page)
     app.register_blueprint(bp)
     app.run(debug=True)
