@@ -55,6 +55,7 @@ $(function() {
     $.ajax({
         url: process.env.APP_API_SERVER + "/api/users/get",
         type: "GET",
+        contentType: "application/json",
     }).done(function(data) {
         $table.show();
         $.each(data.users, function(idx, item) {

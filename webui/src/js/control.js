@@ -21,6 +21,7 @@ $(function() {
     $.ajax({
         url: process.env.APP_API_SERVER + "/api/control/lock/state",
         type: "GET",
+        contentType: "application/json",
     }).done(function(data) {
         locked = data.locked;
         $button.show();

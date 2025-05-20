@@ -44,6 +44,7 @@ $(function() {
     $.ajax({
         url: process.env.APP_API_SERVER + "/api/network/get",
         type: "GET",
+        contentType: "application/json",
     }).done(function(data) {
         $form.show();
         $fieldSsid.val(data.ssid);
